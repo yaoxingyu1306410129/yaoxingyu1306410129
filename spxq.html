@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-icon iconfont icon-gouwuche mui-pull-right"></a>
+		    <h1 class="mui-title">商品详情</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="mui-slider">
+		    	<div >
+		    		<img style="width:100% ;" class="info" src="images/sp.png"/>
+		    	</div>
+            </div>
+		    <div class="sp-b">
+		    	<p><span class="sp-1">进行中</span><span class="sp-2 info">10元全国话费-特别容易中奖，很嗨哦，一般人俺不告诉他</span></p>
+		        <p style=" font-size: 13px; margin: 0px;">期号：<span class="info">91904581</span></p>
+		  			<div class="jdt info" style="margin-bottom:5px;" >
+		  				<div class="jdt-l"></div>
+		  			</div>
+	  			<p style="margin:0px; font-size: 13px;">
+	  				<span class="box-1-l-l"><span style="margin-right: 5px;">总需人次:</span><span style="color: #3E99ED;" class="info">6666</span></span>
+	  				<span class="box-1-l-r"><span>剩余人次：</span><span style="color: #3E99ED;" class="info">4969</span></span>
+	  			</p>
+		    </div>
+		    <div class="sp-b-b">
+		    	<p>声明：本产品所有活动及商品均与苹果公司无关</p>
+		    </div>
+		    </div>
+		    <div class="sp-c">
+		    	<p><span class="iconfont icon-renwu1" style="color: #B2EFF3; font-size: 18px;margin-right: 10px;"></span><span style="font-size: 15px;">我的本期参与记录</span><span style="font-size: 13px;margin-left: 10px;">
+		    		(共<span id="order_number">0</span>条)</span></p>
+		         <button id="no_order" >您没有参与本期零钱购哦！</button>
+		         <div class="">
+		         	<ul class="mui-table-view" id="order_list" style="display: none;">
+		         		<li class="mui-table-view-cell">购买人：，购买时间：2016-10-10</li>
+		         	</ul>
+		         </div>
+		    </div>
+		    <div class="sp-d">
+		    	<ul class="mui-table-view">
+	    	        <li class="mui-table-view-cell" style="border-bottom: 1px solid #DDDDDD;">
+	    	            <a class="mui-navigate-right">
+	    	                <span class="iconfont icon-iconrenwu" style="font-size: 26px;color: #FFC8B5;"></span>
+	    	                <span style="color: #777777; font-size: 15px;line-height: 10px !important;">往期揭晓</span>
+	    	            </a>
+	    	        </li>
+	    	        <li class="mui-table-view-cell">
+	    	            <a class="mui-navigate-right">
+	    	                 <span class="iconfont icon-xiangji1" style="font-size: 24px;color: #DFD7FF;"></span>
+	    	                <span style="color: #777777; font-size: 15px;">晒单分享</span>
+	    	            </a>
+	    	        </li>
+		    	</ul>
+		    	<ul class="mui-table-view" style="margin-top: 15px;">
+	    	        <li class="mui-table-view-cell">
+	    	            <a class="mui-navigate-right">
+	    	                <span class="iconfont icon-gouwudai" style="font-size: 25px;color: #B3EFF3;"></span>
+	    	                <span style="color: #777777; font-size: 15px;">本期所有参与记录</span>
+	    	            </a>
+	    	        </li>
+		    	</ul>
+		    </div>
+		    <div class="sp-e">
+		    	<div class="sp-e-l">
+		    		<div class="sp-e-t">
+		    			<span>公</span>
+		    		</div>
+		    		<div class="sp-e-b">
+		    			<p style="color:#3C3C3D ;"><b>公平公正</b></p>
+		    		    <p style="font-size:11px; color: #BCBCBF;">100% fair trade</p>
+		    		</div>
+		    	</div>
+		    	<div class="sp-e-c">
+		    		<div class="sp-e-t">
+		    			<span>正</span>
+		    		</div>
+		    		<div class="sp-e-b" >
+		    			<p style="color:#3C3C3D ;"><b>正品保障</b></p>
+		    		    <p style="font-size:11px; color: #BCBCBF; ">Authentic </p>
+		    		</div>
+		    	</div>
+		    	<div class="sp-e-r">
+		    	    <div class="sp-e-t">
+		    			<span>免</span>
+		    		</div>
+		    		<div class="sp-e-b">
+		    			<p style="color:#3C3C3D ;"><b>全国免邮</b></p>
+		    		    <p style="font-size:11px; color: #BCBCBF;">The free mail</p>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="sp-f">
+		    	<div class="sp-f1 f1 kf">
+		    		<span class="iconfont icon-kefu"></span>
+		    		<p>客服</p>
+		    	</div>
+		    	<div class="sp-f1 f2 kf">
+		    		<span class="iconfont icon-fenxiang"></span>
+		    		<p>分享</p>
+		    	</div>
+		    	<div class="sp-f1 f3 car">
+		    		<p>加入购物车</p>
+		    	</div>
+		    	<div class="sp-f1 f4 car">
+		    		<p>立即参与</p>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script>
+	ca.init();
+	//隐藏滑条
+	dongyi.hiddenScroll();
+	//通过传过来的id获得点击的商品详情
+	var info = ca.className('info');
+//	alert(info.length)
+	var request_url = localStorage.getItem('request_url');
+	var id= localStorage.getItem('item_id');
+//	alert(id);
+//	alert(request_url);
+
+     // 参数总数
+     var order_number = ca.id('order_number');
+     var no_order = ca.id('no_order');
+     var order_list = ca.id('order_list');
+    get_item();
+	function get_item(){
+		ca.get({
+		url:request_url+'Item/get_one',
+		data:{
+			id_data:id,
+		},
+		succFn:function(data){
+			var json = JSON.parse(data);
+//			alert(json);
+			info[0].src=json.img;
+			info[1].innerHTML= json.title;
+			info[2].innerHTML= json.time;
+			info[4].innerHTML= json.number;
+			info[5].innerHTML= json.number - json.order_number;
+			
+		}
+	})
+	}
+	//获得所有的order
+	get_order();
+	function get_order(){
+		ca.get({
+			url:request_url+'Item/get_order_log',
+			data:{
+				id_data:id,
+			},
+			succFn:function(data){
+				var json = JSON.parse(data);
+				alert(json);
+			}
+		})
+	}
+	//客服和分享
+	var  kf = ca.className('kf');
+	kf[0].addEventListener('tap',function(){
+		ca.callPhone('15957586752');
+	});
+	kf[1].addEventListener('tap',function(){
+		 ca.share({
+		 	shareTile:'分享到',
+		 	shareContent:'分享的内容',
+		 });
+	});
+	//加入购物车
+	var car = ca.className('car');
+	car[0].addEventListener('tap',function(){
+		
+	})
+	car[1].addEventListener('tap',function(){
+		var arr=['支付宝','微信']
+		ca.actionSheet(arr,{
+			succFn:function(data){
+				var pay_type = 'alipay';
+				if (data==1) {
+					pay_type = 'wxpay';
+				}
+				
+				//数据库存信息
+				var request_url = localStorage.getItem('request_url');
+				var login_phone = localStorage.getItem('login_phone');
+				ca.get({
+					url:request_url+'Item/pay',
+					data:{
+						phone_data:login_phone,
+						id_data:id,
+					},
+					succFn:function(data){
+						if (data) {
+							ca.prompt('支付成功');
+							get_item()
+						}
+						
+					}
+				})
+//				dongyi.pay({
+//				    url:'http://peipao.dongyixueyuan.com/alipay.php',
+//				    type:'alipay',
+//				    money:1,
+//				    succFn:function(){
+//				        alert('支付成功');
+//				    },
+//				    errFn:function(err){
+//				        alert('支付失败');
+//				    }
+//				});
+				
+			}
+		})
+	})
+</script>
+</html>

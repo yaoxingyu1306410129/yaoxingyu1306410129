@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<style type="text/css">
+			#nav{
+				background-color: #fff;
+				overflow: hidden;
+				line-height: 35px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			#nav a{
+				text-align: center;
+				width: 50%;
+				color: #000000;
+				display: inline-block;
+				float: left;
+				font-size: 14px;
+			}
+			.js{
+				color:#D53C2B  !important;
+				border-bottom: 1px solid #D53C2B;
+			}
+			.box{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body style="background-color:#FFFFFF ;">
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-icon mui-pull-right">
+		    	<button class="btn">兑换红包</button>
+		    </a>
+		    <h1 class="mui-title">我的红包</h1>
+		</header>
+		<div class="mui-content">
+			<div id="nav">
+				<a href="#" class="js">可使用</a>
+				<a href="#">已经使用/过期</a>
+			</div>
+			<div class="box" style="display: block;">
+				<div class="xxk-a">
+					<img src="images/hb.jpg"/>
+					<p>1没有找到对应信息</p>
+					<button>马上去零购</button>
+				</div>
+			</div>
+			<div class="box" >
+				<div class="hb" style="border-bottom: 1px solid #DDDDDD;">
+					<div class="hb1">
+						<img src="images/hb1.jpg"/>
+					</div>
+					<div class="hb2">
+						<h4>新人专享好礼红包</h4>
+						<p>金额：<span>1零钱币</span></p>
+						<p>生效日期：<span>2016-09-12 00:00:00</span></p>
+						<p>失效日期：<span>2016-09-13 00:00:00</span></p>
+						<p>1元也许就是一台iPhone！满10减1</p>
+					</div>
+					<div class="hb3">
+						<img src="images/hb2.jpg"/>
+					</div>
+				</div>
+				<div class="hb" style="border-bottom: 1px solid #DDDDDD;">
+					<div class="hb1">
+						<img src="images/hb1.jpg"/>
+					</div>
+					<div class="hb2">
+						<h4>新人专享好礼红包</h4>
+						<p>金额：<span>1零钱币</span></p>
+						<p>生效日期：<span>2016-09-12 00:00:00</span></p>
+						<p>失效日期：<span>2016-09-13 00:00:00</span></p>
+						<p>1元也许就是一台iPhone！满10减1</p>
+					</div>
+					<div class="hb3">
+						<img src="images/hb2.jpg"/>
+					</div>
+				</div>
+				<div class="hb" style="border-bottom: 1px solid #DDDDDD;">
+					<div class="hb1">
+						<img src="images/hb1.jpg"/>
+					</div>
+					<div class="hb2">
+						<h4>新人专享好礼红包</h4>
+						<p>金额：<span>1零钱币</span></p>
+						<p>生效日期：<span>2016-09-12 00:00:00</span></p>
+						<p>失效日期：<span>2016-09-13 00:00:00</span></p>
+						<p>1元也许就是一台iPhone！满10减1</p>
+					</div>
+					<div class="hb3">
+						<img src="images/hb2.jpg"/>
+					</div>
+				</div>
+				<div class="hb" style="border-bottom: 1px solid #DDDDDD;">
+					<div class="hb1">
+						<img src="images/hb1.jpg"/>
+					</div>
+					<div class="hb2">
+						<h4>新人专享好礼红包</h4>
+						<p>金额：<span>1零钱币</span></p>
+						<p>生效日期：<span>2016-09-12 00:00:00</span></p>
+						<p>失效日期：<span>2016-09-13 00:00:00</span></p>
+						<p>1元也许就是一台iPhone！满10减1</p>
+					</div>
+					<div class="hb3">
+						<img src="images/hb2.jpg"/>
+					</div>
+				</div>
+			</div>
+		  
+		</div>
+	</body>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script type="text/javascript">
+     ca.init();
+	var nav = ca.id('nav');
+	var box = ca.className('box');
+	var btn = ca.tagName(nav,'a');
+     for (var a=0;a<btn.length;a++) {
+     	(function(index){
+     		btn[a].onclick=function(){
+     			for (var b=0;b<box.length;b++) {
+     				btn[b].className='';
+					box[b].style.display='none';
+     			}
+     			btn[index].className='js';
+				box[index].style.display='block';
+     		}
+     	})(a)
+     }
+     var btn1= ca.tagName('button');
+     btn1[0].addEventListener('tap',function(){
+     	ca.newInterface({
+     		url:"duihuanhongbao.html",
+     		id:"duihuanhongbao",
+     	})
+     })
+</script>
+</html>
+  

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-icon mui-pull-right">
+		    	<button class="btn">注册</button>
+		    </a>
+		    <h1 class="mui-title">登录</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="login-a">
+		    	<img src="images/tx.png"/>
+		    </div>
+		    <div class="login-b">
+		    	<form class="mui-input-group">
+		    	    <div class="mui-input-row">
+		    	        <label><span class="iconfont icon-wode"></span></label>
+		    	        <input type="text" class="mui-input" placeholder="请输入您的手机号码" id="inp">
+		    	    </div>
+		    	    <div class="mui-input-row">
+		    	        <label><span class="iconfont icon-mima "></span></label>
+		    	        <input type="password" class="mui-input-password" placeholder="请输入密码（6-14位的数字或密码）">
+		    	    </div>
+		    	</form>
+		    </div>
+		    <div class="login-c">
+		    	<button>立即登录</button>
+		    	<a href="reset-password.html">忘记密码？</a>
+		    </div>
+		    <div class="login-d">
+		    	<p><span class="login-d-l"></span><span class="login-d-c">闪电注册，马上中奖</span><span class="login-d-l"></span></p>
+		    </div>
+		    <div class="login-e">
+		    	<div class="login-e-l">
+		    		<span class="mui-icon mui-icon-weixin"></span>
+		    		<p>微信登陆</p>
+		    	</div>
+		    	<div class="login-e-r">
+		    		<span class="mui-icon mui-icon-qq"></span>
+		    		<p>QQ登陆</p>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script>
+	ca.init();
+	var btn = ca.tagName('button');
+	var inp = ca.tagName('input');
+	btn[0].addEventListener('tap',function(){
+		ca.newInterface({
+			url:'register.html',
+			id:'register',
+		})
+	})
+	btn[1].addEventListener('tap',function(){
+		var phone = inp[0].value.trim();
+		var password = inp[1].value.trim();
+		if (phone == '') {
+	 		ca.prompt('请输入你的手机号码');
+	 		return;	 		
+	 	}
+		if (phone.length!=11) {
+	 		ca.prompt('手机号码位数不正确');
+	 		return;	 		
+	 	}
+	 	if (isNaN(phone)){
+        	ca.prompt('手机号码不非数字');
+        	return;
+        }
+	 	if(!(/^1[34578]\d{9}$/.test(phone))){ 
+            ca.prompt('手机号码有误，请重填');
+            return ; 
+        } 
+		if (password == '') {
+	 		ca.prompt('密码不能为空');
+	 		return;	 		
+	 	}
+		if (password.length>14) {
+	 		ca.prompt('密码必须少于14位');
+	 		return;	 		
+	 	}
+	 	if (password.length<6) {
+	 		ca.prompt('密码必须大于6位');
+	 		return;	 		
+	 	}
+	 	var request_url = localStorage.getItem('request_url');
+	 ca.get({
+	 	url:request_url+"User/login_do",
+	 	data:{
+	 		phone_data:phone,
+	 		password_data:password,
+	 	},
+	 	succFn:function(data){
+	 		if (data==1) {
+	 			ca.prompt('登录成功');
+	 			localStorage.setItem('login_phone',phone);
+	 			var arr=['wode'];
+ 					//update_user_info 相当于频道号
+ 					ca.sendNotice(arr,'update_user_info',{})
+ 					ca.getStartInterface(function(obj){
+							obj.show();
+						});
+	 			return;
+	 		} else if (data==0) {
+	 			ca.prompt('密码不正确，请重新输入');
+	 			return;
+	 		} else{
+	 			ca.prompt('登录失败');
+	 			return;
+	 		}
+	 	}
+	 })
+	})
+</script>
+</html>

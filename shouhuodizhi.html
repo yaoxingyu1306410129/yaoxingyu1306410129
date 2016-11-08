@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+		    h2{
+		    	overflow: hidden;
+		    }
+			span{
+				float: right;
+				font-size: 15px;
+				position: absolute;
+				color: #9A9A9A;
+				top: 22px;
+				right: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-icon mui-icon-plusempty mui-pull-right" id="a"></a>
+		    <h1 class="mui-title">收货地址</h1>
+		</header>
+		<div class="mui-content">
+			<div class="dz">
+		    	<p style="text-align: center;">双击就可删除</p>
+		    </div>
+			<div  class="dzys" style="display:none ;">
+				<ul class="mui-table-view" id="address_list" >
+					<!--<li class="mui-table-view-cell" style="position: relative;border-bottom: 1px solid #DDDDDD;">
+							<h2 style="font-size: 17px;">高世伟 15167043035 </h2>
+							<p style="font-size: 14px;">北大街压缩到你家还是等</p>
+							<span>修改</span>
+					</li>-->
+				</ul>
+			</div>
+		    <div class="shdz dzys">
+		    	<img src="images/shdz.jpg"/>
+		    	<p>你还没有添加对应地址</p>
+		    	<button>马上添加</button>
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/castapp.js" ></script>
+	<script type="text/javascript" src="js/mui.min.js" ></script>
+	<script type="text/javascript">
+	mui.init();
+		ca.init();
+		var a = ca.id('a');
+		a.addEventListener('tap',function(){
+			localStorage.removeItem('address_id');
+			localStorage.removeItem('name');
+			localStorage.removeItem('phone');
+			localStorage.removeItem('address');
+			localStorage.removeItem('detail');
+			
+			ca.newInterface({
+				url:"dizhi.html",
+				id:"dizhi",
+			})
+		})
+		var btn = ca.tagName('button')[0];
+		btn.addEventListener('tap',function(){
+			localStorage.removeItem('address_id');
+			localStorage.removeItem('name');
+			localStorage.removeItem('phone');
+			localStorage.removeItem('address');
+			localStorage.removeItem('detail');
+			ca.newInterface({
+				url:"dizhi.html",
+				id:"dizhi",
+			})
+		})
+		
+		var login_phone = localStorage.getItem('login_phone');
+		var dzys = ca.className('dzys');
+		var request_url = localStorage.getItem('request_url');
+		var address_list = ca.id('address_list');
+		if (login_phone) {
+			dzys[0].style.display="block";
+			dzys[1].style.display="none";
+		} 
+		ca.receiveNotice('update_address',function(){
+			get_address();
+		});
+		get_address();
+		function get_address(){
+			ca.get({
+				url:request_url+'User/get_address',
+	   	        data:{
+	   	        	phone_data:login_phone,
+	   	        },
+	   	    succFn:function(data){
+	   	    	address_list.innerHTML='';
+	   	    	var json = JSON.parse(data);
+	   	    	for (var a in json) {
+	   	    		var tmpl = '<li class="mui-table-view-cell" iid="'+json[a].id +'" style="position: relative;border-bottom: 1px solid #DDDDDD;">'
+								+'		<h2 style="font-size: 17px;">'+json[a].name +' '+ json[a].phone+' </h2>'
+								+'		<p style="font-size: 14px;">'+json[a].address+'-'+json[a].detail+'</p>'
+								+'		<span iid="'+json[a].id +'" name="'+json[a].name +'" phone="'+json[a].phone +'" address="'+json[a].address +'" detail="'+json[a].detail +'" class="mod">修改</span>'
+								+'</li>'
+					address_list.innerHTML+=tmpl;
+	   	    	}
+	   	    	click_event();
+	   	    }
+			})
+		}
+		
+		function click_event(){
+			var mod = ca.className('mod');
+			
+			for (var a=0;a<mod.length;a++) {
+				mod[a].addEventListener('tap',function(){
+					var name = this.getAttribute('name');
+					var phone = this.getAttribute('phone');
+					var address = this.getAttribute('address');
+					var detail = this.getAttribute('detail');
+					var id = this.getAttribute('iid');
+					
+					localStorage.setItem('name',name);
+					localStorage.setItem('phone',phone);
+					localStorage.setItem('address',address);
+					localStorage.setItem('detail',detail);
+					localStorage.setItem('address_id',id)
+					ca.newInterface({
+						url:"dizhi.html",
+						id:"dizhi",
+					})
+				})
+			}
+			var cell =ca.className('mui-table-view-cell');
+		    for (var a = 0;a<cell.length;a++) {
+				ca.gesture(cell[a],'doubletap ',function(){
+					alert("aa");
+					ca.confirm({
+						title:'提醒',
+						content:'是否删除该条信息?',
+						callback:function(data){
+							alert(data)
+						}
+					})
+				})
+			}
+	}
+	</script>
+
+</html>

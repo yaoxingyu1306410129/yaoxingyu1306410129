@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+		     .xxk1{
+		     	border-bottom: 1px solid #DDDDDD;
+		     	background-color: #FFFFFF;
+		     	padding: 10px 0px;
+		     }
+			#xxk{
+				background-color: #fff;
+				overflow: hidden;
+				text-align: center;
+				border: 1px solid #DC3031;
+				border-radius: 5px;
+				height: 26px;
+				margin: 0px  10px;
+				
+			}
+			#xxk a{
+				width: 50%;
+				float: left;
+				display: inline-block;
+				line-height: 25px;
+				font-size: 14px;
+				color:#DC3031 ;
+			}
+			.js{
+				color: #fff !important;
+				background-color: #DC3031;
+			}
+			.xxk-a{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body style="background-color:#fff;">
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">账户明细</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="xxk1">
+				<div id="xxk">
+			    	<a href="#" class="js">充值记录</a>
+			    	<a href="#">消费记录</a>
+			    </div>
+			</div>
+			<div class="xxk-a" style="display: block;">
+				<img src="images/xx.JPG"/>
+				<p>1没有找到对应信息</p>
+			</div>
+			<div class="xxk-a">
+				<img src="images/xx.JPG"/>
+				<p>2没有找到对应信息</p>	
+			</div>
+		    
+		</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/castapp.js" ></script>
+	<script type="text/javascript">
+		var nav = ca.id('xxk');
+		var box = ca.className('xxk-a');
+		var btn = ca.tagName(nav,'a');
+		for (var a =0;a<btn.length;a++) {
+			(function(index){
+				btn[a].onclick=function(){
+     			for (var b=0;b<box.length;b++) {
+     				btn[b].className='';
+					box[b].style.display='none';
+     			}
+     			btn[index].className='js';
+				box[index].style.display='block';
+     		}
+				
+			})(a)
+			
+		}
+	</script>
+
+</html>

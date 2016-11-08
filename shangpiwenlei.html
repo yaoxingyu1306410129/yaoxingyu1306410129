@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title input">
+		    	<span class="iconfont icon-sousuo sousou"></span>
+		    	<input type="text"  name="" id="" placeholder="搜索感兴趣的商品" />
+		    </h1>
+		</header>
+		<div class="mui-content">
+		    <div class="fl-a">
+		    	<div class="fl-a-t">
+		    		<p>热门专区</p>
+		    	</div>
+		    	<div class="fl-a-b">
+		    		<a href="zhengpingbaozheng.html"><img src="images/zp_05.jpg"/></a>
+		    		<p>正品保证 最快物流</p>
+		    	</div>
+		    </div>
+		    <div class="fl-b">
+		    	<p>热门品类</p>
+		    	<div class="fl-b-l">
+		    		<div class="fl-b-l-l">
+		    			<div class="fl-l" style="border-right: 1px solid #D8D8D8;">
+		    				<span class="iconfont icon-pingguo fl0 fl1"></span>
+		    				<span class="wz">苹果专区</span>
+		    			</div>
+		    			<div class="fl-l">
+		    				<span class="iconfont icon-weibiaoti103 fl0 fl2"></span>
+		    				<span class="wz">限购专区</span>
+		    			</div>
+		    		</div>
+		    		<div class="fl-b-l-l">
+		    			<div class="fl-l" style="border-right: 1px solid #D8D8D8;">
+		    				<span class="iconfont icon-diannao fl0 fl3"></span>
+		    				<span class="wz">手机数码</span>
+		    			</div>
+		    			<div class="fl-l">
+		    				<span class="iconfont icon-dengpao fl0 fl4"></span>
+		    				<span class="wz">虚拟充值</span>
+		    			</div>
+		    		</div>
+		    		<div class="fl-b-l-l">
+		    			<div class="fl-l" style="border-right: 1px solid #D8D8D8;">
+		    				<span class="iconfont icon-jiadianbingxiang fl0 fl5"></span>
+		    				<span class="wz">家用电器</span>
+		    			</div>
+		    			<div class="fl-l">
+		    				<span class="iconfont icon-kafei fl0 fl6"></span>
+		    				<span class="wz">吃喝专区</span>
+		    			</div>
+		    		</div>
+		    		<div class="fl-b-l-l">
+		    			<div class="fl-l" style="border-right: 1px solid #D8D8D8;">
+		    				<span class="iconfont icon-mimayaochi fl0 fl7"></span>
+		    				<span class="wz">生活日用</span>
+		    			</div>
+		    			<div class="fl-l">
+		    				<span class="iconfont icon-yunyunpan fl0 fl8"></span>
+		    				<span class="wz">其他商品</span>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script type="text/javascript">
+	ca.init();
+	var btn = ca.className('fl-l');
+	  btn[0].addEventListener('tap',function(){
+	  	ca.newInterface({
+	  		url:'pgzq.html',
+	  		id:'pgzq',
+	  	})
+	  })
+</script>

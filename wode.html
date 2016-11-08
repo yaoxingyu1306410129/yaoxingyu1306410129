@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon iconfont icon-xiaoxi mui-pull-right a"></a>
+		    <a class=" mui-icon iconfont icon-shezhi mui-pull-right a"></a>
+		    <h1 class="mui-title">我的</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="wd">
+		    	<div class="wd-l">
+		    		<img src="images/tx.png" id="img" style="width:100px ;height: 100px;"/>
+		    	</div>
+		    	<!--登录前-->
+		    	<div class="wd-r" id="login_event" >
+		    		<p id="dl">登录零钱购，一元中大奖!</p>
+		    		<p id="dl2"><span class="an">快速注册</span><span class="an2">马上登录</span></p>
+		    	</div>
+		    	<!--登录后-->
+		    	<div class="wd-r"id="login_succ" style="display: none;">
+		    		<p id="dl3"style="font-size: 19px;">phone</p>
+		    		<p id="dl4" style="font-size: 13px;">欢迎登录零钱购</p>
+		    	</div>
+		    </div>
+		    <div class="wd-b">
+		    	<div class="wd-b-1">
+		    		<span>0</span>
+		    		<p>我的ID</p>
+		    	</div>
+		    	<div class="wd-b-1">
+		    		<span>0</span>
+		    		<p>零钱币</p>
+		    	</div>
+		    	<div class="wd-b-1" >
+		    		<span>0.00</span>
+		    		<p>佣金</p>
+		    	</div>
+		    	<div class="wd-b-1" style="border-left: 1px solid #D8D8D8;">
+		    		<span class="iconfont icon-chongzhi" style="color: #EE5859;font-size: 35px;"></span>
+		    		<p style="margin-top: 10px;">充值<span class="mui-icon mui-icon-arrowright"style="font-size: 20px;"></span></p>
+		    	</div>
+		    </div>
+		    <div class="wd-c">
+		    	<h5><span class="iconfont icon-icon-408004712" style="margin-right: 5px; font-size: 20px;"></span>我的零购</h5>
+		    	<div class="wd-c-l">
+		    		<div class="wd-c-l-1">
+		    			<span class="iconfont icon-jinxingzhong"></span>
+		    			<p>进行中</p>
+		    		</div>
+		    		<div class="wd-c-l-1">
+		    			<span class="iconfont icon-jiangbei"></span>
+		    			<p>已揭晓</p>
+		    		</div>
+		    		<div class="wd-c-l-1">
+		    			<span class="iconfont icon-icon-408004712"></span>
+		    			<p>多期记录</p>
+		    		</div>
+		    		<div class="wd-c-l-1">
+		    			<span class="iconfont icon-youjiang"></span>
+		    			<p>中奖记录</p>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="wd-d">
+		    	<div class="wd-d-1">
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-vip wd-t1"></span>
+		    			<p>我的VIP</p>
+		    		</div>
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-wodehongbao wd-t2"></span>
+		    			<p>我的红包</p>
+		    		</div>
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-dizhi wd-t3"></span>
+		    			<p>我的地址</p>
+		    		</div>
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-renwu wd-t4"></span>
+		    			<p>每天任务</p>
+		    		</div>
+		    	</div>
+		    	<div class="wd-d-1" >
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-zhaopian wd-t5"></span>
+		    			<p>我的晒单</p>
+		    		</div>
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-xingxing wd-t6"></span>
+		    			<p>常见问题</p>
+		    		</div>
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-zhuanqian wd-t7"></span>
+		    			<p>分享赚钱</p>
+		    		</div>
+		    		<div class="wd-d-1-l">
+		    			<span class="iconfont icon-kefu wd-t8"></span>
+		    			<p>我的客服</p>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script type="text/javascript">
+	ca.init();
+	//头部
+	var img = ca.id('img');
+	var dl = ca.id('dl3') ;
+	var an = ca.className('an')[0];
+	    an.addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'register.html',
+	   	  	id:'register',
+	   	  })
+	   })
+	var an2 = ca.className('an2')[0];
+	    an2.addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'login.html',
+	   	  	id:'login',
+	   	  })
+	   })
+	  //头部
+	var  a = ca.className('a');
+	    a[0].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'xiaoxizhongxi.html',
+	   	  	id:'xiaoxizhongxi',
+	   	  })
+	  });
+	    a[1].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'shezhi.html',
+	   	  	id:'shezi',
+	   	  })
+	  });
+	  //id
+	var id = ca.className('wd-b-1');
+	    id[1].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'zhanghumingxi.html',
+	   	  	id:'zhanghumingxi',
+	   	  })
+	   });
+	    id[2].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'fenxzhuangqian.html',
+	   	  	id:'fenxzhuangqian',
+	   	  })
+	   });
+	    id[3].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'chognzhijiem.html',
+	   	  	id:'chognzhijiem',
+	   	  })
+	   });
+	var jxz = ca.className('wd-c-l-1');
+	    jxz[0].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'jingxinzhong.html',
+	   	  	id:'jingxinzhong',
+	   	  })
+	   });
+	    jxz[1].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'jingxinzhong.html',
+	   	  	id:'jingxinzhong',
+	   	  })
+	   });
+	    jxz[2].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'duoqijil.html',
+	   	  	id:'duoqijil',
+	   	  })
+	   });
+	    jxz[3].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'zhongjiangjilu.html',
+	   	  	id:'zhongjiangjilu',
+	   	  })
+	   });
+	var vip = ca.className('wd-d-1-l');
+	     vip[0].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'wodevip.html',
+	   	  	id:'wodevip',
+	   	  })
+	   });
+	     vip[1].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'hongbao.html',
+	   	  	id:'hongbao',
+	   	  })
+	   });
+	     vip[2].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'shouhuodizhi.html',
+	   	  	id:'shouhuodizhi',
+	   	  })
+	   });
+	     vip[3].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'wodevip.html',
+	   	  	id:'wodevip',
+	   	  })
+	   });
+	     vip[4].addEventListener('tap',function(){
+	   	   ca.newInterface({
+	   	  	url:'woyaoshaidan.html',
+	   	  	id:'woyaoshaidan',
+	   	  })
+	      });
+	     vip[5].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'wodevip.html',
+	   	  	id:'wodevip',
+	   	  })
+	   });
+	     vip[6].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'fenxzhuangqian.html',
+	   	  	id:'fenxzhuangqian',
+	   	  })
+	   });
+	     vip[7].addEventListener('tap',function(){
+	   	  ca.newInterface({
+	   	  	url:'weixikefu.html',
+	   	  	id:'weixikefu',
+	   	  })
+	   });
+	var login_event = ca.id('login_event');    
+	var login_succ = ca.id('login_succ');   
+	  
+	    
+	    
+	    ca.receiveNotice('update_user_info',function(){
+	     var phone = localStorage.getItem('login_phone');
+	     
+	      if (phone) {
+	      	   get_user_info();
+	      	  //关闭登录和注册界面
+	      	  setTimeout(function(){
+	      	  	ca.getTargetInterface('login',function(obj){
+	      	  		if (obj) {
+	      	  			obj.close();
+	      	  		}
+	      	  	})
+	      	  	ca.getTargetInterface('register',function(obj){
+	      	  		if (obj) {
+	      	  			obj.close();
+	      	  		}
+	      	  	})
+	      	  })
+	      }else{
+	      	img.addEventListener('tap',function(){
+			   	    ca.newInterface({
+			   	  	url:'login.html',
+			   	  	id:'login',
+			   	  	})
+			   	 })
+	      	login_event.style.display="block";
+		      	  login_succ.style.display="none";
+		      	  img.src = "images/tx.png";
+	      }
+	    },1000);
+	    //接受通知
+	    ca.receiveNotice('update_user_info',function(){
+	    	//更新信息
+	    	get_user_info();
+	    })
+	    //获得当前最新的信息
+	     get_user_info();
+	     function get_user_info(){
+//	     	判断是否登录
+	     	var phone = localStorage.getItem('login_phone');
+	     	if ( phone=='' || phone== undefined || phone == 'null' || phone == null) {
+	     		return;
+	     	}
+	     	var request_url = localStorage.getItem('request_url');
+	     	ca.get({
+	     		url:request_url+'User/get_user_info',
+	     		data:{
+	     			phone_data:phone
+	     		},
+	     		succFn:function(data){
+	     			
+	     			localStorage.setItem('user_data',data);
+	     			
+	     			
+	     			
+	     			
+	     			var  json = JSON.parse(data);
+	     			if (! json.head_img) {
+	     				
+	     				img.src = "images/tx.png";
+	     			} else{
+	     				img.src = json.head_img;
+	     			}
+	     			if (json.nickname) {
+	     				dl.innerHTML = json.nickname;
+	     			} else{
+	     				dl.innerHTML = json.phone;
+	     			}
+		      	  login_event.style.display="none";
+		      	  login_succ.style.display="block";
+		      	   img.addEventListener('tap',function(){
+			   	    ca.newInterface({
+			   	  	url:'gerxingx.html',
+			   	  	id:'gerxingx',
+			   	  })
+			   })
+	     		}
+	     	})
+	     }
+</script>

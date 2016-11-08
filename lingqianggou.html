@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<style type="text/css">
+			#nav{
+				margin-top: 10px;
+				background-color: #fff;
+				overflow: hidden;
+				line-height: 33px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			#nav a{
+				width: 20%;
+				display: inline-block;
+				text-align: center;
+				float: left;
+				color: #666666;
+				font-weight: bold;
+				font-size: 14px;
+			}
+			.over{
+				height: 33px;
+				line-height: 33px;
+				border-bottom: 1px solid red;
+			}
+			.box{
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-icon iconfont icon-sousuo mui-pull-left" id="sous"></a>
+		    <a class="mui-icon iconfont icon-xiaoxi  mui-pull-right" id="xiaox"></a>
+		    <h1 class="mui-title">零钱购</h1>
+		</header>
+		<div class="mui-content">
+			<!--轮播-->
+		    <div class="mui-slider">
+	          <div class="mui-slider-group mui-slider-loop">
+	            <!--支持循环，需要重复图片节点   0  1 2 3 0 1 2 3-->
+	            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/b5.jpg"  class="lunb"/></a></div>
+	            <div class="mui-slider-item"><a href="#"><img src="images/b.jpg" class="lunb"/></a></div>
+	            <div class="mui-slider-item"><a href="#"><img src="images/b1.jpg" class="lunb"/></a></div>
+	            <div class="mui-slider-item"><a href="#"><img src="images/b2.jpg" class="lunb"/></a></div>
+	            <div class="mui-slider-item"><a href="#"><img src="images/b3.jpg" class="lunb"/></a></div>
+	            <div class="mui-slider-item"><a href="#"><img src="images/b4.jpg" class="lunb"/></a></div>
+	            <div class="mui-slider-item"><a href="#"><img src="images/b5.jpg" class="lunb"/></a></div>
+	            <!--支持循环，需要重复图片节点-->
+	            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/b.jpg" class="lunb"/></a></div>
+	          </div>
+	             
+	        <!--//轮播图中间底部圆点-->
+	          <div class="mui-slider-indicator">
+	                <div class="mui-indicator mui-active"></div>
+	            <div class="mui-indicator"></div>
+	            <div class="mui-indicator"></div>
+	            <div class="mui-indicator"></div>
+	          </div>
+	        </div>
+	        <!--5宫格-->
+	        <div class="lqg">
+	        	<div class="lqg-1">
+	        		<span class="iconfont icon-iconfontchanpinjieshao tb-1-1"></span>
+	        		<p>商品分类</p>
+	        	</div>
+	        	<div class="lqg-1">
+	        		<span class="iconfont icon-shuxian tb-1-2"></span>
+	        		<p>玩法介绍</p>
+	        	</div>
+	        	<div class="lqg-1">
+	        		<span class="iconfont icon-guanyuwomen tb-1-3"></span>
+	        		<p>我要赚钱</p>
+	        	</div>
+	        	<div class="lqg-1">
+	        		<span class="iconfont icon-xiangji tb-1-4"></span>
+	        		<p>真实晒单</p>
+	        	</div>
+	        	<div class="lqg-1">
+	        		<span class="iconfont icon-xiaoxi tb-1-5"></span>
+	        		<p>微信客服</p>
+	        	</div>
+	        	<div class="tt">
+		  			<img src="images/tt.png"/>
+		  			<span class="gx">恭喜<span style="color: #FF5501;">13456***7890</span>花<span style="color: #E43954;">10</span>元获得<span style="color: #000000;"><b>IPHONE7</b></span></span>
+		  	    </div>
+	        </div>
+	        <div id="nav">
+	        	<!--<a href="#" class="over">最热</a>
+	        	<a>最快</a>
+			  	<a>最新</a>
+			  	<a>最易中</a>
+			  	<a>最奢侈</a>-->
+	        </div>
+	        <div class="box" style="display: block;" >
+	        	<div class="box-1" id="item_list">
+			  		<!--<div class="box-1-l">
+				  			<img src="images/sp.png"id="qwe"/>
+				  			<h4>iphone1</h4>
+				  			<p>
+				  				<span class="box-1-l-l"><span>总需:</span><span style="color: #3E99ED;">6666</span></span>
+				  				<span class="box-1-l-r "><span>进度:</span><span style="color: #3E99ED;">20%</span></span>
+				  			</p>
+				  			<div class="jdt">
+				  				<div class="jdt-l"></div>
+				  			</div>
+			  		</div>-->
+			  	</div>
+	        </div>   
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script type="text/javascript">
+	ca.init();
+	var nav = ca.id('nav');
+	var top_data = '';
+	var item_list = ca.id('item_list');
+	//轮播图循环
+	castapp.pictureScroll({
+	    callback:function(pictureNumber){
+	    },
+	    isAutoScroll:true,
+	    scrollTime:3
+	});
+	
+	//获得导航分类
+	var request_url = localStorage.getItem('request_url');
+	ca.get({
+		url:request_url+'Item/get_info',
+		data:{},
+		succFn:function(data){
+//			alert(data);
+            
+			var json = JSON.parse(data);
+			top_data =json;
+//			alert(json.length)
+			for (var a=0 ;a<json.length ; a++) {
+				if (a == 0) {
+					var tmpl = '<a href="javascript:;" class="over">'+json[a].title+'</a>';
+				}else{
+					var tmpl = '<a href="javascript:;">'+json[a].title+'</a>';
+				}
+				nav.innerHTML += tmpl;
+			}
+			create_tmpl_data('最热'); 	
+			nav_event();
+		}
+	})
+	//选项卡
+	function nav_event(){
+	    var btn = ca.tagName(nav,'a');
+	    for (var a=0;a<btn.length;a++) {
+	     	(function(index){
+	     		btn[a].onclick=function(){
+	     			for (var b=0;b<btn.length;b++) {
+	     				btn[b].className='';
+	     			}
+	     			btn[index].className='over';
+	     			//显示不同分类
+//	     			alert(this.innerHTML)
+                    var title = this.innerHTML;
+                    create_tmpl_data(title);
+                    
+	     		}
+	     	})(a)
+	     }
+	};
+	function create_tmpl_data(title){
+		for (var q=0;q<top_data.length;q++) {
+//                  	alert(top_data[q].title);
+                        if (top_data[q].title == title) {
+                        	var item = top_data[q].item;
+//                      	alert(JSON.stringify(item));
+                              //使用模板
+                              item_list.innerHTML ='';
+                              for (var a in item) {
+                              	var tmpl ='	<div class="box-1-l" iid="'+item[a].id+'">'
+											+'  			<img src="'+item[a].img+' "id="qwe"/>'
+											+'  			<h4>'+item[a].title+'</h4>'
+											+'  			<p>'
+											+'  				<span class="box-1-l-l"><span>总需:</span><span style="color: #3E99ED;">'+item[a].number	+'</span></span>'
+											+'  				<span class="box-1-l-r "><span>进度:</span><span style="color: #3E99ED;">20%</span></span>'
+											+'  			</p>'
+											+'  			<div class="jdt">'
+											+'  				<div class="jdt-l"></div>'
+											+'  			</div>'
+										  	+'	</div>'
+										  	
+								item_list.innerHTML +=tmpl;
+                              }
+                              //点击事件
+                              click_event();
+                        }
+                    }
+	};
+     //点击调整到详情页
+     function click_event(){
+     	var cell = ca.className('box-1-l');
+     	for (var a=0;a<cell.length;a++) {
+     		cell[a].addEventListener('tap',function(){
+		       	var iid = this.getAttribute('iid'); 
+		       	localStorage.setItem('item_id',iid);
+		       	ca.newInterface({
+		       		url:'spxq.html',
+       		        id:'spxq',
+		       	})
+		       })
+     	}
+     };
+     //五宫格
+    var t= ca.className('lqg-1');
+       t[0].addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"shangpiwenlei.html",
+       		id:"shangpiwenlei",
+       	})
+       });
+       t[1].addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"xinshoubangzhu.html",
+       		id:"xinshoubangzhu",
+       	})
+       });
+       t[2].addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"fenxzhuangqian.html",
+       		id:"fenxzhuangqian",
+       	})
+       });
+       t[3].addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"zhengshishaidan.html",
+       		id:"zhengshishaidan",
+       	})
+       });
+       t[4].addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"weixikefu.html",
+       		id:"xinshoubangzhu",
+       	})
+       });
+    var a=ca.id('sous');
+      a.addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"shangpiwenlei.html",
+       		id:"shangpiwenlei",
+       	})
+       });
+    var xx=ca.id('xiaox');
+      xx.addEventListener('tap',function(){
+       	ca.newInterface({
+       		url:"xiaoxizhongxi.html",
+       		id:"xiaoxizhongxi",
+       	})
+      });
+</script>

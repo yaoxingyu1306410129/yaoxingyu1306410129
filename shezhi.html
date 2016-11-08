@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">设置</h1>
+		</header>
+		<div class="mui-content">
+			<div class="shezhi-a">
+				<ul class="mui-table-view" style="margin: 10px 0px;">
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                    <p><span class="iconfont icon-wode icon" ></span>新手帮助</p>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                    <p><span class="iconfont icon-lianjie icon"></span>用户协议</p>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                     <p><span class="iconfont icon-iconfontchanpinjieshao icon"></span>关于我们</p>
+		                </a>
+		            </li>
+		        </ul>
+		        <ul class="mui-table-view">
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                    <p><span class="iconfont icon-huancun icon" ></span>清除缓存</p>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                    <p><span class="iconfont icon-changjianwenti icon"></span>常见问题</p>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                     <p><span class="iconfont icon-kaiguanguan icon"></span>推送定制</p>
+		                </a>
+		            </li>
+		            <li class="mui-table-view-cell" style="border-bottom: 1px solid #D8D8D8;">
+		                <a class="mui-navigate-right" id="shezhi-a-1">
+		                     <p><span class="iconfont icon-lianjie icon"></span>师父确认</p>
+		                </a>
+		            </li>
+		        </ul>
+			</div>
+		    <button class="zhux">注销登录(ID：2019604)</buton>
+		</div>
+	</body>
+<script type="text/javascript" src="js/castapp.js" ></script>
+<script>
+	ca.init();
+	var cell = ca.className('mui-table-view-cell');
+	var btn= ca.className('zhux');
+	cell[0].addEventListener('tap',function(){
+		ca.newInterface({
+			url:"xinshoubangzhu.html",
+			id:"xinshoubangzhu",
+		})
+	})
+	cell[1].addEventListener('tap',function(){
+		ca.newInterface({
+			url:"yonghuxy.html",
+			id:"yonghuxy",
+		})
+	})
+	btn[0].addEventListener('tap',function(){
+	  ca.confirm({
+			title:'提醒',
+			content:'是否退出?',
+			callback:function(data){
+				if (data) {
+					//注销登录
+					localStorage.removeItem('login_phone');
+					var arr = ['wode'];
+					ca.sendNotice(arr ,'update_user_info',{});
+					dongyi.tabBarInit(true,'');
+					ca.getStartInterface(function(obj){
+						obj.show();
+					})
+				}
+			}
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+		    .cz-a button{
+				text-align: center;
+				height: 35px;
+				display: inline-block;
+				width: 17%;
+				color: #000000;
+				background-color: #fff;
+				margin: 10px 30px;
+				border-radius: 0px;
+			}
+			.js{
+				background-color:#DC3031 !important;
+				color: #fff !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <a class="mui-icon  mui-pull-right">
+		    	<button class="btn">优惠卷</button>
+		    </a>
+		    <h1 class="mui-title">充值</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="cz">
+		    	<p>零钱购以众筹模式为各类商品提供网络销售平台，众筹支持者将获得优惠卷回报，同时将有一人获得商品回报</p>
+		    </div>
+		    <div class="cz1">
+		    	<p>充值金额</p>
+		    	<div class="cz-a" style="border-top: 1px solid #DDDDDD;padding: 10px;">
+		    		<button >10元</button>
+		    		<button >20元</button>
+		    		<button >30元</button>
+		    		<button >50元</button>
+		    		<button >100元</button>
+		    		<input type="text" placeholder="其他金额" />
+		    	</div>
+		    </div>
+		    <div class="cz2">
+		    	<p class="cz-p">支付方式</p>
+		    	<div class="cz2-a">
+	                <p id="p"><span class="mui-icon mui-icon-qq"style="color: #58A0FF;"></span>QQ钱包 <span class="mui-pull-right"><input type="radio" name="1"/></span></p>
+	                <p id="p"><span class="mui-icon mui-icon-weixin"style="color:#39AC2C ;"></span>微信支付(最少2元)<span class="mui-pull-right"><input type="radio" name="1" /></span></p>
+		    	</div>
+		    </div>
+		    <button class="cz3">确认支付</button>
+		</div>
+	</body>
+  <script type="text/javascript" src="js/castapp.js" ></script>
+  <script type="text/javascript">
+  	  ca.init();
+  	  var nav = ca.className('cz-a')[0];
+  	  var btn= ca.tagName(nav,'button');
+  	     for (var a =0;a<btn.length;a++) {
+  	     	(function(index){
+  	     		btn[a].onclick=function(){
+  	     			for (var b=0;b<btn.length;b++) {
+	     				btn[b].className='';
+	     				var inp = ca.tagName('input')[0];
+					  	     inp.onclick=function () {
+					  	     	btn[index].className='';
+					  	     }
+     			    }
+	     		btn[index].className='js';
+  	     		}
+  	     	})(a)
+  	     }
+  	     
+  </script>
+</html>
